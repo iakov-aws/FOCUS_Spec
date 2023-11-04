@@ -19,10 +19,12 @@ Represents the suggested provider published price for a single pricing measureme
 ## Content Constraints
 
 | Constraint      | Value                                |
-|:----------------|:-------------------------------------|
+| :-------------- | :----------------------------------- |
+| Column type     | Dimension                            |
 | Column required | True                                 |
 | Data type       | Decimal                              |
 | Allows nulls    | True                                 |
+| Normalized      | False                                |
 | Value format    | Numeric value                        |
 | Number range    | Any valid non-negative decimal value |
 

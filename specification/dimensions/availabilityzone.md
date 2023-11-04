@@ -14,16 +14,18 @@ Availability Zone
 
 ## Description
 
-A provider assigned identifier for a physically separated and isolated area within a Region that provides high availability and fault tolerance.
+Provider assigned identifier for a physically separated and isolated area within a Region that provides high availability and fault tolerance.
 
 ## Content constraints
 
-| Constraint      | Value            |
-|:----------------|:-----------------|
-| Column required | False            |
-| Data type       | String           |
-| Allows nulls    | True             |
-| Value format    | \<not specified> |
+| Constraint      | Value         |
+| :-------------- | :------------ |
+| Column type     | Dimension     |
+| Column required | False         |
+| Data type       | String        |
+| Allows nulls    | True          |
+| Normalized      | False         |
+| Value format    | Not specified |
 
 ## Introduced (version)
 

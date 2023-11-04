@@ -16,16 +16,18 @@ Commitment Discount Name
 
 ## Description
 
-The display name assigned to a commitment-based discount.
+Display name assigned to a commitment-based discount.
 
 ## Content constraints
 
-| Constraint      | Value            |
-|:----------------|:-----------------|
-| Column required | True             |
-| Data type       | String           |
-| Allows nulls    | True             |
-| Value format    | \<not specified> |
+| Constraint      | Value         |
+| :-------------- | :------------ |
+| Column type     | Dimension     |
+| Column required | True          |
+| Data type       | String        |
+| Allows nulls    | True          |
+| Normalized      | False         |
+| Value format    | Not specified |
 
 ## Introduced (version)
 

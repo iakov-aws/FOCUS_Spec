@@ -20,12 +20,14 @@ An offering that can be purchased from a provider (e.g., cloud virtual machine, 
 
 ## Content Constraints
 
-| Constraint      | Value            |
-| :-------------- | :--------------- |
-| Column required | True             |
-| Data type       | String           |
-| Allows nulls    | False            |
-| Value format    | \<not specified> |
+| Constraint      | Value         |
+| :-------------- | :------------ |
+| Column type     | Dimension     |
+| Column required | True          |
+| Data type       | String        |
+| Allows nulls    | False         |
+| Normalized      | False         |
+| Value format    | Not specified |
 
 ## Introduced (version)
 

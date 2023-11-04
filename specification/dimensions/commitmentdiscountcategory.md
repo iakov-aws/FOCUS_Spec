@@ -20,19 +20,21 @@ Indicates whether the commitment-based discount identified in the CommitmentDisc
 
 ## Content constraints
 
-|    Constraint   |      Value       |
-|:----------------|:-----------------|
-| Column required | True             |
-| Data type       | String           |
-| Allows nulls    | True             |
-| Value format    | list-of-values   |
+| Constraint      | Value          |
+| :-------------- | :------------- |
+| Column type     | Dimension      |
+| Column required | True           |
+| Data type       | String         |
+| Allows nulls    | True           |
+| Normalized      | True           |
+| Value format    | List of values |
 
 Allowed values:
 
-| Value      | Description                                                                                                                                                                   |
-|:--------|:--------------------------------------------------------------------------------|
-| Spend   | Commitment-based discounts that require a predetermined amount of spend.    |
-| Usage   | Commitment-based discounts that require a predetermined amount of usage.    |
+| Value | Description                                                              |
+| :---- | :----------------------------------------------------------------------- |
+| Spend | Commitment-based discounts that require a predetermined amount of spend. |
+| Usage | Commitment-based discounts that require a predetermined amount of usage. |
 
 ## Introduced (version)
 

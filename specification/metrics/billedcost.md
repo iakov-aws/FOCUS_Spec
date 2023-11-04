@@ -18,11 +18,13 @@ A charge serving as the basis for invoicing, inclusive of all reduced rates and 
 
 ## Content constraints
 
-|    Constraint   |      Value              |
-|:----------------|:------------------------|
+| Constraint      | Value                   |
+| :-------------- | :---------------------- |
+| Column type     | Metric                  |
 | Column required | True                    |
 | Data type       | Decimal                 |
 | Allows nulls    | False                   |
+| Normalized      | False                   |
 | Value format    | Numeric value           |
 | Number range    | Any valid decimal value |
 

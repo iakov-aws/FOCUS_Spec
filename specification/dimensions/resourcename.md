@@ -23,12 +23,14 @@ Display name assigned to a resource.
 
 ## Content Constraints
 
-|    Constraint   |      Value      |
-|:----------------|:----------------|
-| Column required | True            |
-| Data type       | String          |
-| Allows nulls    | True            |
-| Value format    | \<not specified> |
+| Constraint      | Value         |
+| :-------------- | :------------ |
+| Column type     | Dimension     |
+| Column required | True          |
+| Data type       | String        |
+| Allows nulls    | True          |
+| Normalized      | False         |
+| Value format    | Not specified |
 
 ## Introduced (version)
 

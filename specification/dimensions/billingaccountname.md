@@ -18,16 +18,18 @@ Billing Account Name
 
 ## Description
 
-The display name assigned to a billing account.
+Display name assigned to a billing account.
 
 ## Content constraints
 
-|    Constraint   |      Value      |
-|:----------------|:----------------|
-| Column required | True            |
-| Data type       | String          |
-| Allows nulls    | True            |
-| Value format    | \<not specified> |
+| Constraint      | Value         |
+| :-------------- | :------------ |
+| Column type     | Dimension     |
+| Column required | True          |
+| Data type       | String        |
+| Allows nulls    | True          |
+| Normalized      | False         |
+| Value format    | Not specified |
 
 ## Introduced (version)
 

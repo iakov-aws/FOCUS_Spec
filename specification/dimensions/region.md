@@ -18,12 +18,14 @@ Isolated geographic area where a resource is provisioned in and/or a service is 
 
 ## Content constraints
 
-| Constraint      | Value           |
-|-----------------|-----------------|
-| Column required | True            |
-| Data type       | String          |
-| Allows nulls    | False           |
-| Value format    | \<not specified> |
+| Constraint      | Value         |
+| --------------- | ------------- |
+| Column type     | Dimension     |
+| Column required | True          |
+| Data type       | String        |
+| Allows nulls    | False         |
+| Normalized      | False         |
+| Value format    | Not specified |
 
 ## Introduced (version)
 

@@ -2,7 +2,7 @@
 
 Billing period represents the time window for which an organization has or will receive an invoice for. The time window is inclusive of the start date and exclusive of the end date.
 
-Billing Period Start represents the start date and time of the billing period.
+Billing Period Start represents the beginning date and time of the billing period.
 
 The BillingPeriodStart column MUST be present in the billing data. This column MUST be of type Date/Time and MUST NOT contain null values. BillingPeriodStart column MUST conform to [FOCUS Date/Time Format](#date/timeformat). The sum of the Billed Cost metric for line items in a given billing period MUST match the sum of the invoices received for that billing period for a billing account.
 
@@ -16,16 +16,18 @@ Billing Period Start
 
 ## Description
 
-The beginning date and time of the billing period.
+Beginning date and time of the billing period.
 
 ## Content Constraints
 
-| Constraint      | Value                                                         |
-|:----------------|:--------------------------------------------------------------|
-| Column Required | True                                                          |
-| Data type       | Date/Time                                                     |
-| Allows nulls    | False                                                         |
-| Value format    | Meets [FOCUS Date/Time Format](#date/timeformat) requirements |
+| Constraint      | Value                                |
+| :-------------- | :----------------------------------- |
+| Column type     | Dimension                            |
+| Column required | True                                 |
+| Data type       | Date/Time                            |
+| Allows nulls    | False                                |
+| Normalized      | True                                 |
+| Value format    | [Date/Time Format](#date/timeformat) |
 
 ## Introduced (version)
 
