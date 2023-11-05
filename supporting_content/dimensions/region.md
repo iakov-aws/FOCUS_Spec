@@ -1,24 +1,24 @@
 # Column: Region
-	
+
 ## Example provider mappings
 
 Current column mappings found in available data sets:
 
-| Provider | Data set                 | Column            |
-|----------|--------------------------|-------------------|
-| AWS | CUR                      | Product_region    |
+| Provider     | Data set                | Column            |
+| ------------ | ----------------------- | ----------------- |
+| AWS          | CUR                     | Product_region    |
 | Google Cloud | BigQuery Billing Export | Location.location |
-| Microsoft | EA, MCA                  | ResourceLocation  |
+| Microsoft    | EA, MCA                 | ResourceLocation  |
 
 ## Example usage scenarios
 
 Current values observed in billing data for various scenarios:
 
-| Provider | Data set                 | Example Value                                                                   |
-|----------|--------------------------|---------------------------------------------------------------------------------|
-| AWS | CUR                      | us-east-1, eu-west-1, us-gov-east-1 |
+| Provider     | Data set                | Example Value                                                           |
+| ------------ | ----------------------- | ----------------------------------------------------------------------- |
+| AWS          | CUR                     | us-east-1, eu-west-1, us-gov-east-1                                     |
 | Google Cloud | BigQuery Billing Export | northamerica-northeast1, asia-southeast1, us-central2, europe-west3, us |
-| Microsoft | Cost details             | Eastasia, AP East, WestUS, centralindia |
+| Microsoft    | Cost details            | Eastasia, AP East, WestUS, centralindia                                 |
 
 ## Discussion / Scratch space:
 
@@ -31,37 +31,37 @@ Current values observed in billing data for various scenarios:
 - For data transfer type use cases (from/to), does the region become the one that you get pricing for?
 - Should 'usage' type columns be in the spec?
 - Initial 0.5 scope is cost data primarily. Usage reasons are prioritized lower
-- GCP: 
+- GCP:
+
   - Location.location: The ResourceName column MUST be present in the billing data. This column MUST be of type String. The ResourceName value MAY be a nullable column as some cost data rows may not be associated with a resource or because a display name cannot be assigned to a resource. ResourceName MUST NOT be null if a display name can be assigned to a resource. Resources not provisioned interactively or only have a system generated ResourceId MUST NOT duplicate the same value as the ResourceName.
   - Location.country --->  When location.location is a country, region, or zone, this field is the country of usage, e.g. US. For more information, see Geography and regions and Google Cloud locations.
   - Location.region ---> When location.location is a region or zone, this field is the region of usage, e.g. us-central1. For more information, see Geography and regions and Google Cloud locations.
   - Location.region ---> When location.location is a region or zone, this field is the region of usage, e.g. us-central1. For more information, see Geography and regions and Google Cloud locations.
   - Another region related column might be billed region, priced region or something of that sort that signifies where the pricing rules are set
 
--   Definition discussion:\
-    "A Region is an isolated geographic area where a resource is provisioned in OR a service is provided from. The region identifier is assigned by the provider. Resources and/or services are commonly utilized from different regions based on considerations for data sovereignty, performance, cost, convenience, or geopolitical reasons. "
+- Definition discussion:\
+  "A Region is an isolated geographic area where a resource is provisioned in OR a service is provided from. The region identifier is assigned by the provider. Resources and/or services are commonly utilized from different regions based on considerations for data sovereignty, performance, cost, convenience, or geopolitical reasons. "
 
-| Provider  | Provider Region / Location | AZ / Zone  | Region Category(?) | Geographical Region (code? Continent) | Country (code?) | TimeZone (check need) |
-|-----------|----------------------------|------------|--------------------|---------------------------------------|-----------------|-----------------------|
-| AWS       | eu-west-1                  | eu-west-1a | single-region      | EU?                                   | Ireland?        | GMT +/- n             |
-| Google Cloud      | europe-west3               |            | single-region      |                                       |                 |                       |
-| Microsoft | WestEurope                 |            | single-region      |                                       | Ireland         |                       |
-| AWS       | Global (normalized?)       |            | global             |                                       |                 |                       |
-| Google Cloud      | nam-eur-asia1              |            | multi-region       |                                       |                 |                       |
+| Provider     | Provider Region / Location | AZ / Zone  | Region Category(?) | Geographical Region (code? Continent) | Country (code?) | TimeZone (check need) |
+| ------------ | -------------------------- | ---------- | ------------------ | ------------------------------------- | --------------- | --------------------- |
+| AWS          | eu-west-1                  | eu-west-1a | single-region      | EU?                                   | Ireland?        | GMT +/- n             |
+| Google Cloud | europe-west3               |            | single-region      |                                       |                 |                       |
+| Microsoft    | WestEurope                 |            | single-region      |                                       | Ireland         |                       |
+| AWS          | Global (normalized?)       |            | global             |                                       |                 |                       |
+| Google Cloud | nam-eur-asia1              |            | multi-region       |                                       |                 |                       |
 
+| Provider     | Summary (lowest level) | Geo Region (code? Continent) | Country (code?) | Provider Region / Location | AZ / Zone  | Region Category(?) | TimeZone (check need) |
+| ------------ | ---------------------- | ---------------------------- | --------------- | -------------------------- | ---------- | ------------------ | --------------------- |
+| AWS          | eu-west-1a             | EU?                          | Ireland?        | eu-west-1                  | eu-west-1a | single-region      | GMT +/- n             |
+| Google Cloud | europe-west3           | EU                           | Ireland?        | europe-west3               | (null)     | single-region      |                       |
+| MS           | WestEurope             | EU                           | Ireland         | WestEurope                 | (null)     | single-region      |                       |
+| AWS          | Global                 | Global                       | Global          | Global (normalized?)       | (null)     | global             |                       |
+| Google Cloud | nam-eur-asia1          | Global?                      | Global?         | nam-eur-asia1              | (null)     | multi-region       |                       |
 
-| Provider | Summary (lowest level) | Geo Region (code? Continent) | Country (code?) | Provider Region / Location | AZ / Zone  | Region Category(?) | TimeZone (check need) |
-|----------|------------------------|------------------------------|-----------------|----------------------------|------------|--------------------|-----------------------|
-| AWS      | eu-west-1a             | EU?                          | Ireland?        | eu-west-1                  | eu-west-1a | single-region      | GMT +/- n             |
-| Google Cloud     | europe-west3           | EU                           | Ireland?        | europe-west3               | (null)     | single-region      |                       |
-| MS       | WestEurope             | EU                           | Ireland         | WestEurope                 | (null)     | single-region      |                       |
-| AWS      | Global                 | Global                       | Global          | Global (normalized?)       | (null)     | global             |                       |
-| Google Cloud     | nam-eur-asia1          | Global?                      | Global?         | nam-eur-asia1              | (null)     | multi-region       |                       |
-
--   Brainstorming secondary region
+- Brainstorming secondary region
 
 | Provider | Provider Region | Secondary Region | Secondary Region Type   |
-|----------|-----------------|------------------|-------------------------|
+| -------- | --------------- | ---------------- | ----------------------- |
 |          | WestEurope      | BrazilSouth      | DataTransferDestination |
 |          | WestEurope      | External         | DataTransferSource      |
 |          | WestEurope      |                  |                         |
